@@ -1,0 +1,31 @@
+<div class="col-md-4" *ngFor="let proveedor of proveedores">
+  <div class="card text-center">
+    <div
+      class="
+        card-header
+        bg-dark
+        text-white
+        d-flex
+        justify-content-between
+        align-center
+      "
+    >
+      Nombre: {{ proveedor.nombre }}
+      <button class="btn btn-danger" (click)="deleteProveedor(proveedor.id)">
+        <i class="far fa-trash-alt"></i>
+      </button>
+    </div>
+    <div class="card-body">
+      <p>Direccion: {{ proveedor.direccion }}</p>
+      <p>Correo: {{ proveedor.correo }}</p>
+      <p>Vehiculos: {{ proveedor.vehiculos }}</p>
+      <p>Fecha: {{ proveedor.fecha | date: "yyyy-MM-dd" }}</p>
+      <a
+        [routerLink]="['/proveedores/edit', proveedor.id]"
+        class="btn btn-info btn-block"
+      >
+        Editar proveedor
+      </a>
+    </div>
+  </div>
+</div>

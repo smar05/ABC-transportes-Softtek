@@ -1,0 +1,60 @@
+<div class="col-md-4 offset-md-2">
+  <div class="card">
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <input
+            [(ngModel)]="proveedor.nombre"
+            type="text"
+            name="nombre"
+            placeholder="Nombre"
+            class="form-control"
+            autofocus
+          />
+        </div>
+        <div class="form-group">
+          <textarea
+            [(ngModel)]="proveedor.direccion"
+            type="text"
+            name="direccion"
+            placeholder="Direccion"
+            class="form-control"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <input
+            [(ngModel)]="proveedor.correo"
+            type="email"
+            name="correo"
+            placeholder="Correo"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            [(ngModel)]="proveedor.vehiculos"
+            type="number"
+            name="vehiculo"
+            placeholder="#Vehiculos"
+            class="form-control"
+          />
+        </div>
+        <button
+          (click)="edit ? updateProveedor() : saveNewProveedor()"
+          class="btn btn-success btn-block"
+        >
+          Guardar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-body text-center">
+    <h3>Nombre: {{ proveedor.nombre }}</h3>
+    <p>Direccion: {{ proveedor.direccion }}</p>
+    <p>Correo: {{ proveedor.correo }}</p>
+    <p>Vehiculos: {{ proveedor.vehiculos }}</p>
+  </div>
+</div>
